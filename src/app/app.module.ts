@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,16 +14,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { SelectSensorComponent } from './select-sensor/select-sensor.component';
+import { MapDeviceLocationComponent } from './map-device-location/map-device-location.component';
 
 @NgModule({
    declarations: [
       AppComponent,
-      SelectSensorComponent
+      SelectSensorComponent,
+      MapDeviceLocationComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       BrowserAnimationsModule,
+      HttpClientModule,
       ReactiveFormsModule,
       FormsModule,
       MatFormFieldModule,
@@ -29,7 +34,10 @@ import { SelectSensorComponent } from './select-sensor/select-sensor.component';
       MatCardModule,
       MatButtonModule,
       MatDialogModule,
-      MatSelectModule
+      MatSelectModule,
+      AgmCoreModule.forRoot({
+         apiKey: 'AIzaSyB0b_WmJAFUsrfuG5DUVOjQctT5r-5e4cw'
+       })
    ],
    providers: [],
    bootstrap: [

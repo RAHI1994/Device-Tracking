@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-sensor',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class SelectSensorComponent implements OnInit {
   sensorForm: FormGroup;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.initForm();
@@ -28,5 +29,9 @@ export class SelectSensorComponent implements OnInit {
   onSubmit() {
     const value = this.sensorForm.value;
     console.log(value);
+    this.router.navigate(['map', value.deviceId, value.sensorId]);
+    // this.locationservice.device_location().subscribe(data=>{
+    //   console.log(data);
+    // })
   }
 }
