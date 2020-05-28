@@ -1,0 +1,30 @@
+<div style="display: flex; justify-content:center;">
+  
+  <mat-card class="example-card">
+  <h3> Choose Sensor</h3> 
+  <div *ngIf="sensorForm">
+  <form [formGroup]="sensorForm" (ngSubmit)= onSubmit()>
+       <div>
+          <mat-form-field appearance="fill" [class.mat-form-field-invalid]="!sensorForm.get('sensorId').valid && sensorForm.get('sensorId').touched">
+            <input type="text" matInput placeholder="Sensor Id*" formControlName="sensorId">
+            <mat-error *ngIf="!sensorForm.get('sensorId').valid && sensorForm.get('sensorId').touched">Enter valid Id</mat-error>
+          </mat-form-field>
+        </div>
+      
+        <div style="margin-top: 1rem;">
+          <mat-form-field appearance="fill" [class.mat-form-field-invalid]="!sensorForm.get('deviceId').valid && sensorForm.get('deviceId').touched">
+            <input type="text" matInput placeholder="Device Id*" formControlName="deviceId">
+            <mat-error *ngIf="!sensorForm.get('deviceId').valid && sensorForm.get('deviceId').touched">Enter valid Id</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+          <button type="sumbit" mat-raised-button  [disabled] = "!sensorForm.valid">
+            SUBMIT
+          </button>
+        </div>
+  </form>
+</div>
+</mat-card>
+  
+</div>

@@ -1,0 +1,25 @@
+h3{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+.example-card {
+    width: 250px;
+    height: 300px;
+    background-color: rgb(39, 35, 35);
+   
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    color: white;
+    
+  } 
+  button{
+      width: 100%;
+      background-color: green;
+      color:black;
+  }
+  input{
+    caret-color: white;
+  }
