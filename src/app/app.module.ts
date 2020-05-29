@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { SelectSensorComponent } from './select-sensor/select-sensor.component';
 import { MapDeviceLocationComponent } from './map-device-location/map-device-location.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
    declarations: [
@@ -36,7 +37,7 @@ import { MapDeviceLocationComponent } from './map-device-location/map-device-loc
       MatDialogModule,
       MatSelectModule,
       AgmCoreModule.forRoot({
-         apiKey: 'AIzaSyB0b_WmJAFUsrfuG5DUVOjQctT5r-5e4cw'
+         apiKey: environment.googleApi
        })
    ],
    providers: [],

@@ -5,6 +5,7 @@ import { MapDeviceLocationComponent } from './map-device-location/map-device-loc
 
 
 const routes: Routes = [
+  {path:  '', redirectTo: 'select-sensor', pathMatch: 'full'},
   {path:  'select-sensor', component: SelectSensorComponent},
   {path:  'map/:device_id/:sensor_id', component: MapDeviceLocationComponent},
 ];

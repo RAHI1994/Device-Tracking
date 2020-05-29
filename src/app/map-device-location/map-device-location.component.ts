@@ -18,6 +18,7 @@ export class MapDeviceLocationComponent implements OnInit, OnDestroy {
   lat:number;
   zoom = 18;
   subscription: Subscription;
+  error: boolean = false;
 
   constructor(private locationservice: MapService,private route: ActivatedRoute, public dialog: MatDialog) { }
 
@@ -27,8 +28,13 @@ export class MapDeviceLocationComponent implements OnInit, OnDestroy {
     this.subscription = timer(0, 10000).pipe(
       switchMap(() => this.locationservice.device_location(this.deviceId))
     ).subscribe(data => {
-      this.long = data['data'].longitude;
-      this.lat = data['data'].latitude;
+      if (data['status'] == 'success') {
+        this.long = data['data'].longitude;
+        this.lat = data['data'].latitude;
+      } else {
+        this.error = true;
+      }
+      
       console.log(data);
     });
     // console.log(this.deviceId);

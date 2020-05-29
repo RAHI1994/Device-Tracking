@@ -12,7 +12,7 @@ export class MapService {
 
   public device_location(Id: string) {
     return this.http.post(`${this.apiUrl}`, {
-      devid: '4d872a60f3f17a6a02a27fa72d303a34',
+      devid: Id,
     });
   }
 }

@@ -1,3 +1,8 @@
-<agm-map [latitude]="lat" [longitude]="long" [zoom]="zoom">
-  <agm-marker [latitude]="lat" [longitude]="long" (markerClick)="openDialog()"></agm-marker>
-</agm-map>
+<div *ngIf="lat">
+  <agm-map [latitude]="lat" [longitude]="long" [zoom]="zoom">
+    <agm-marker [latitude]="lat" [longitude]="long" (markerClick)="openDialog()"></agm-marker>
+  </agm-map>
+</div>
+<div *ngIf="error"> 
+  <h1 style="color: white;">Internal Server Error</h1>
+</div>
