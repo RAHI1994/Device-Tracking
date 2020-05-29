@@ -30,15 +30,13 @@ export class MapDeviceLocationComponent implements OnInit, OnDestroy {
     ).subscribe(data => {
       if (data['status'] == 'success') {
         this.long = data['data'].longitude;
-        this.lat = data['data'].latitude;
+        this.lat = data['data'].latitude; 
       } else {
         this.error = true;
       }
       
       console.log(data);
     });
-    // console.log(this.deviceId);
-    // console.log(this.sensorId);
   }
 
   openDialog() {
