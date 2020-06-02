@@ -29,9 +29,10 @@ export class SelectSensorComponent implements OnInit {
   onSubmit() {
     const value = this.sensorForm.value;
     console.log(value);
-    this.router.navigate(['map', value.deviceId, value.sensorId]);
+    // this.router.navigate(['map', value.deviceId, value.sensorId]);
     // this.locationservice.device_location().subscribe(data=>{
     //   console.log(data);
     // })
+    this.router.navigate(['lots', value.deviceId]);
   }
 }

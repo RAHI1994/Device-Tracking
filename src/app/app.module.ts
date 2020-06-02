@@ -16,12 +16,14 @@ import {MatSelectModule} from '@angular/material/select';
 import { SelectSensorComponent } from './select-sensor/select-sensor.component';
 import { MapDeviceLocationComponent } from './map-device-location/map-device-location.component';
 import { environment } from 'src/environments/environment';
+import { ShowlotsComponent } from './showlots/showlots.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       SelectSensorComponent,
-      MapDeviceLocationComponent
+      MapDeviceLocationComponent,
+      ShowlotsComponent
    ],
    imports: [
       BrowserModule,
@@ -40,6 +42,8 @@ import { environment } from 'src/environments/environment';
          apiKey: environment.googleApi
        })
    ],
+
+
    providers: [],
    bootstrap: [
       AppComponent
