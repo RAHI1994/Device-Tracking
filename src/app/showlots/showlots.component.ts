@@ -19,7 +19,7 @@ lists:any  = []
     this.locationservice.lots_detail(this.deviceid).subscribe(data=>{
       this.baylist = data;
       this.baylist.forEach(element => {
-        this.lists.push({left: `${element.x}px`, top: `${element.y}px`, width: `${element.width}px`, height: `${element.height}px`})
+        this.lists.push({id: element.id, left: `${element.x}px`, top: `${element.y}px`, width: `${element.width}px`, height: `${element.height}px`})
         
       });
       console.log(data);
