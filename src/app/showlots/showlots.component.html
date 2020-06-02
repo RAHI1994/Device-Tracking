@@ -1,6 +1,5 @@
-<div *ngFor="let bay of lists">
-  <div [ngStyle]= "bay" class="custom">
-
+<div *ngFor="let bay of lists, let i = index">
+  <div [ngStyle]= "bay" class="custom" (click) = "onclick(i)">
+    <h4>Active:{{bay.active}}</h4>
   </div>
-
 </div>

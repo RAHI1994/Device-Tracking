@@ -17,7 +17,10 @@ export class MapService {
     });
   }
 public lots_detail(Id: string){
- return this.http.get(`${this.apiUrl2}${Id}`)
+ return this.http.get(`${this.apiUrl2}/lot/${Id}`)
 }
 
+public toggle_status(id:string){
+  return this.http.post(`${this.apiUrl2}/bay/${id}/toggle`, {body:null})
+}
 }
